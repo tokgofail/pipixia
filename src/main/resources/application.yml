@@ -1,0 +1,23 @@
+#数据源
+spring:
+  datasource:
+    username: root
+    password: root
+    #url: jdbc:mysql://59b0002x26.goho.co:48498/pipixia?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/pipixia?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+# spring 静态资源扫描路径
+  resources:
+    static-locations: classpath:/static/
+  mvc:
+    view:
+      suffix: .html
+      prefix: /pages/
+
+#设置MyBatis
+mybatis:
+  mapper-locations: classpath*:com/qst/mapper/*Mapper.xml  #映射文件地址
+  type-aliases-package: com.qst.entity  #设置别名
+
+server:
+  port: 8081
